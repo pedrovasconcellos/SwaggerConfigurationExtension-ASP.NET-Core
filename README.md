@@ -1,12 +1,16 @@
 # SwaggerConfigurationExtension
 
-This project was created with the intention of versioning and configure a webapi in aspnet core v2.1 using the swagger (Swashbuckle.AspNetCore)
+#This project was created with the intention of versioning and configure a webapi in aspnet core v2.1 using the swagger (Swashbuckle.AspNetCore)
 
+### License: MIT License Copyright (c) 2018 Pedro Vasconcellos
 
-Author: Pedro Henrique Vasconcellos
-Create date: 01/08/2018
-Description: This project was created with the intention of versioning and configure a webapi in aspnet core using the swagger (Swashbuckle.AspNetCore)
-Site: https://vasconcellos.solutions/
+#Author: Pedro Henrique Vasconcellos
+
+#Create date: 01/08/2018
+
+#Description: This project was created with the intention of versioning and configure a webapi in aspnet core using the swagger (Swashbuckle.AspNetCore)
+
+#Site: https://vasconcellos.solutions/
 
 Use in Controllers you do want to version
 ```csharp
@@ -21,7 +25,9 @@ Obs: You can use this tag for the Token Generation Controller
 [Route("[controller]")]
 ```
 Referencing the project
+```csharp
 using VasconcellosSolutions.SwaggerConfigurationExtension;
+```
 
 Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
 ```csharp

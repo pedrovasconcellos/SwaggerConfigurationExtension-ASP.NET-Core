@@ -42,12 +42,11 @@ using VasconcellosSolutions.SwaggerConfigurationExtension;
 
 Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
 ```csharp
-using SwaggerConfigurationExtension;
 public void ConfigureServices(IServiceCollection services)
 {
     string typeToken = "Bearer";
     var apiKeyScheme = new ApiKeyScheme { In = "header", Description = "Please enter JWT with Bearer into field", Name = "Authorization", Type = "apiKey" };
-    string name = "Vasconcellos WebAPI"
+    string name = "Vasconcellos WebAPI";
     string description = "This project has the purpose of performing an exemplification";
 
     var swaggerConfigurationExtension = new SwaggerStartupConfigureServices(services, typeToken, apiKeyScheme)

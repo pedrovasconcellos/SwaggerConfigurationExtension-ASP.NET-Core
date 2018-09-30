@@ -1,8 +1,0 @@
-C:\Users\pedro\source\repos\SwaggerConfigurationExtension\SwaggerConfigurationExtension\bin\Debug\netcoreapp2.1\SwaggerConfigurationExtension.deps.json
-C:\Users\pedro\source\repos\SwaggerConfigurationExtension\SwaggerConfigurationExtension\bin\Debug\netcoreapp2.1\SwaggerConfigurationExtension.dll
-C:\Users\pedro\source\repos\SwaggerConfigurationExtension\SwaggerConfigurationExtension\obj\Debug\netcoreapp2.1\SwaggerConfigurationExtension.csproj.CoreCompileInputs.cache
-C:\Users\pedro\source\repos\SwaggerConfigurationExtension\SwaggerConfigurationExtension\obj\Debug\netcoreapp2.1\SwaggerConfigurationExtension.AssemblyInfoInputs.cache
-C:\Users\pedro\source\repos\SwaggerConfigurationExtension\SwaggerConfigurationExtension\obj\Debug\netcoreapp2.1\SwaggerConfigurationExtension.AssemblyInfo.cs
-C:\Users\pedro\source\repos\SwaggerConfigurationExtension\SwaggerConfigurationExtension\bin\Debug\netcoreapp2.1\SwaggerConfigurationExtension.pdb
-C:\Users\pedro\source\repos\SwaggerConfigurationExtension\SwaggerConfigurationExtension\obj\Debug\netcoreapp2.1\SwaggerConfigurationExtension.dll
-C:\Users\pedro\source\repos\SwaggerConfigurationExtension\SwaggerConfigurationExtension\obj\Debug\netcoreapp2.1\SwaggerConfigurationExtension.pdb

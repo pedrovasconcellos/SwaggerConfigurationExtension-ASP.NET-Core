@@ -1,6 +1,4 @@
-﻿//This project was created with the intention of versioning and configure a WebAPI in ASP.NET Core v2.1 using the swagger (Swashbuckle.AspNetCore)
-
-//-- =============================================
+﻿//-- =============================================
 //-- Author: Pedro Henrique Vasconcellos
 //-- Create date: 01/08/2018
 //-- Description: This project was created with the intention of versioning and configure a WebAPI in ASP.NET Core v2.1 using the swagger (Swashbuckle.AspNetCore)
@@ -32,12 +30,11 @@ public void ConfigureServices(IServiceCollection services)
 using VasconcellosSolutions.SwaggerConfigurationExtension;
 
 //Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
-using SwaggerConfigurationExtension;
 public void ConfigureServices(IServiceCollection services)
 {
     string typeToken = "Bearer";
     var apiKeyScheme = new ApiKeyScheme { In = "header", Description = "Please enter JWT with Bearer into field", Name = "Authorization", Type = "apiKey" };
-    string name = "Vasconcellos WebAPI"
+    string name = "Vasconcellos WebAPI";
     string description = "This project has the purpose of performing an exemplification";
 
     var swaggerConfigurationExtension = new SwaggerStartupConfigureServices(services, typeToken, apiKeyScheme)

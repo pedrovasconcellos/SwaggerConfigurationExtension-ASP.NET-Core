@@ -7594,11 +7594,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Vasconcellos\\SwaggerConfigurationExtension\\SwaggerConfigurationExtension\\VasconcellosSolutions.SwaggerConfigurationExtension.csproj",
-      "projectName": "VasconcellosSolutions.SwaggerConfigurationExtension",
-      "projectPath": "C:\\Vasconcellos\\SwaggerConfigurationExtension\\SwaggerConfigurationExtension\\VasconcellosSolutions.SwaggerConfigurationExtension.csproj",
+      "projectUniqueName": "C:\\Vasconcellos\\SwaggerConfigurationExtension-ASP.NET-Core\\SwaggerConfigurationExtension\\SwaggerConfigurationExtension.csproj",
+      "projectName": "SwaggerConfigurationExtension",
+      "projectPath": "C:\\Vasconcellos\\SwaggerConfigurationExtension-ASP.NET-Core\\SwaggerConfigurationExtension\\SwaggerConfigurationExtension.csproj",
       "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
-      "outputPath": "C:\\Vasconcellos\\SwaggerConfigurationExtension\\SwaggerConfigurationExtension\\obj\\",
+      "outputPath": "C:\\Vasconcellos\\SwaggerConfigurationExtension-ASP.NET-Core\\SwaggerConfigurationExtension\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

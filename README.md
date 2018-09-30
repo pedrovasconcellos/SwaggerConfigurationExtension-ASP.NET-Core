@@ -1,16 +1,13 @@
 # SwaggerConfigurationExtension
 
-### This project was created with the intention of versioning and configure a webapi in aspnet core v2.1 using the swagger (Swashbuckle.AspNetCore)
-
 ### License: MIT License Copyright (c) 2018 Pedro Vasconcellos
 
-### Author: Pedro Henrique Vasconcellos
+#### Author: Pedro Henrique Vasconcellos
+#### Creation Date: 01/08/2018
 
-### Creation Date: 01/08/2018
+#### Description: This project was created with the intention of versioning and configure a WebAPI in ASP.NET Core v2.1 using the swagger (Swashbuckle.AspNetCore)
 
-### Description: This project was created with the intention of versioning and configure a webapi in aspnet core using the swagger (Swashbuckle.AspNetCore)
-
-### Site: https://vasconcellos.solutions/
+#### Site: https://vasconcellos.solutions/
 
 Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
 ```csharp

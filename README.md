@@ -2,26 +2,29 @@
 
 This project was created with the intention of versioning and configure a webapi in aspnet core v2.1 using the swagger (Swashbuckle.AspNetCore)
 
--- =============================================
--- Author: Pedro Henrique Vasconcellos
--- Create date: 01/08/2018
--- Description: This project was created with the intention of versioning and configure a webapi in aspnet core using the swagger (Swashbuckle.AspNetCore)
--- Site: https://vasconcellos.solutions/
--- =============================================
 
-//Use in Controllers you do want to version
+Author: Pedro Henrique Vasconcellos
+Create date: 01/08/2018
+Description: This project was created with the intention of versioning and configure a webapi in aspnet core using the swagger (Swashbuckle.AspNetCore)
+Site: https://vasconcellos.solutions/
+
+Use in Controllers you do want to version
+```csharp
 [ApiVersion("1.0")]
 [Route("v{version:apiVersion}/[controller]")]
+```
 
-//Use in Controllers you do not want to version
-//Obs: You can use this tag for the Token Generation Controller
+Use in Controllers you do not want to version
+Obs: You can use this tag for the Token Generation Controller
+```csharp
 [ApiVersionNeutral]
 [Route("[controller]")]
-
-//Referencing the project
+```
+Referencing the project
 using VasconcellosSolutions.SwaggerConfigurationExtension;
 
-//Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
+Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
+```csharp
 using SwaggerConfigurationExtension;
 public void ConfigureServices(IServiceCollection services)
 {
@@ -33,8 +36,10 @@ public void ConfigureServices(IServiceCollection services)
     var swaggerConfigurationExtension = new SwaggerStartupConfigureServices(services, typeToken, apiKeyScheme)
         .SetNameAndDescriptionProject(name, description);
 }
+```
 
-//Using => Class: Startup Method: Configure(IApplicationBuilder app, IHostingEnvironment env)
+Using => Class: Startup Method: Configure(IApplicationBuilder app, IHostingEnvironment env)
+```csharp
 public void Configure(IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
 {
     //If you set "withInjectStyleSheet" to true, in "wwwroot" create a folder named "swagger" and put a custom css file "swaggercustom.css"
@@ -42,3 +47,4 @@ public void Configure(IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHos
     string swaggerDocumentationRoute = "Swagger";
     var swaggerStartupConfigure = new SwaggerStartupConfigure(app, withInjectStyleSheet, swaggerDocumentationRoute);
 }
+```

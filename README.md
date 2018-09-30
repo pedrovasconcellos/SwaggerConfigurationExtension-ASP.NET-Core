@@ -1,16 +1,16 @@
 # SwaggerConfigurationExtension
 
-#This project was created with the intention of versioning and configure a webapi in aspnet core v2.1 using the swagger (Swashbuckle.AspNetCore)
+###This project was created with the intention of versioning and configure a webapi in aspnet core v2.1 using the swagger (Swashbuckle.AspNetCore)
 
 ### License: MIT License Copyright (c) 2018 Pedro Vasconcellos
 
-#Author: Pedro Henrique Vasconcellos
+###Author: Pedro Henrique Vasconcellos
 
-#Create date: 01/08/2018
+####Creation Date: 01/08/2018
 
-#Description: This project was created with the intention of versioning and configure a webapi in aspnet core using the swagger (Swashbuckle.AspNetCore)
+###Description: This project was created with the intention of versioning and configure a webapi in aspnet core using the swagger (Swashbuckle.AspNetCore)
 
-#Site: https://vasconcellos.solutions/
+###Site: https://vasconcellos.solutions/
 
 Use in Controllers you do want to version
 ```csharp

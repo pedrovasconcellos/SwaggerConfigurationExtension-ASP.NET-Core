@@ -1,0 +1,9 @@
+C:\Vasconcellos\SwaggerConfigurationExtension-ASP.NET-Core\SwaggerConfigurationExtension\bin\Debug\netcoreapp2.1\Swashbuckle.SwaggerConfigurationExtension.deps.json
+C:\Vasconcellos\SwaggerConfigurationExtension-ASP.NET-Core\SwaggerConfigurationExtension\bin\Debug\netcoreapp2.1\Swashbuckle.SwaggerConfigurationExtension.dll
+C:\Vasconcellos\SwaggerConfigurationExtension-ASP.NET-Core\SwaggerConfigurationExtension\bin\Debug\netcoreapp2.1\Swashbuckle.SwaggerConfigurationExtension.pdb
+C:\Vasconcellos\SwaggerConfigurationExtension-ASP.NET-Core\SwaggerConfigurationExtension\obj\Debug\netcoreapp2.1\Swashbuckle.SwaggerConfigurationExtension.csproj.CoreCompileInputs.cache
+C:\Vasconcellos\SwaggerConfigurationExtension-ASP.NET-Core\SwaggerConfigurationExtension\obj\Debug\netcoreapp2.1\Swashbuckle.SwaggerConfigurationExtension.AssemblyInfoInputs.cache
+C:\Vasconcellos\SwaggerConfigurationExtension-ASP.NET-Core\SwaggerConfigurationExtension\obj\Debug\netcoreapp2.1\Swashbuckle.SwaggerConfigurationExtension.AssemblyInfo.cs
+C:\Vasconcellos\SwaggerConfigurationExtension-ASP.NET-Core\SwaggerConfigurationExtension\obj\Debug\netcoreapp2.1\Swashbuckle.SwaggerConfigurationExtension.dll
+C:\Vasconcellos\SwaggerConfigurationExtension-ASP.NET-Core\SwaggerConfigurationExtension\obj\Debug\netcoreapp2.1\Swashbuckle.SwaggerConfigurationExtension.pdb
+C:\Vasconcellos\SwaggerConfigurationExtension-ASP.NET-Core\SwaggerConfigurationExtension\obj\Debug\netcoreapp2.1\Swashbuckle.SwaggerConfigurationExtension.csprojAssemblyReference.cache

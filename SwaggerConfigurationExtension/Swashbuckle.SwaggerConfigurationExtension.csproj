@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>VasconcellosSwaggerConfigurationExtension.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Swashbuckle.SwaggerConfigurationExtension.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,11 +1,12 @@
-# SwaggerConfigurationExtension
+# Swashbuckle.SwaggerConfigurationExtension
 
-### License: MIT License Copyright (c) 2018 Pedro Vasconcellos
+### License: MIT License 
+### Copyright (c) 2018 Pedro Vasconcellos
 
 #### Author: Pedro Henrique Vasconcellos
-#### Creation Date: 01/08/2018
+#### Creation Date: 30/09/2018
 
-#### Description: This project was created with the intention of versioning and configure a WebAPI in ASP.NET Core v2.1 using the swagger (Swashbuckle.AspNetCore)
+#### Description: This project was created with the intention of versioning and configure a WebAPI in ASP.NET Core v2.1 using the Swagger (Swashbuckle.AspNetCore)
 
 #### Site: https://vasconcellos.solutions/
 
@@ -37,30 +38,38 @@ Obs: You can use this tag for the Token Generation Controller
 ```
 Referencing the project
 ```csharp
-using VasconcellosSolutions.SwaggerConfigurationExtension;
+using Swashbuckle.SwaggerConfigurationExtension;
 ```
 
 Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-    string typeToken = "Bearer";
-    var apiKeyScheme = new ApiKeyScheme { In = "header", Description = "Please enter JWT with Bearer into field", Name = "Authorization", Type = "apiKey" };
-    string name = "Vasconcellos WebAPI";
-    string description = "This project has the purpose of performing an exemplification";
+    string tokenType = "Bearer";
+    var apiKeyScheme = new ApiKeyScheme { 
+            In = "header", 
+            Description = "Please enter JWT with Bearer into field", 
+            Name = "Authorization", 
+            Type = "apiKey" 
+        };
+    string projectName = "Vasconcellos WebAPI";
+    string projectDescription = "This project has the purpose of performing an exemplification";
 
-    var swaggerConfigurationExtension = new SwaggerStartupConfigureServices(services, typeToken, apiKeyScheme)
-        .SetNameAndDescriptionProject(name, description);
+    var swaggerConfigurationExtension = new SwaggerStartupConfigureServices(services, tokenType, apiKeyScheme)
+        .SetNameAndDescriptionProject(projectName, projectDescription);
 }
 ```
 
 Using => Class: Startup Method: Configure(IApplicationBuilder app, IHostingEnvironment env)
 ```csharp
-public void Configure(IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
-    //If you set "withInjectStyleSheet" to true, in "wwwroot" create a folder named "swagger" and put a custom css file "swaggercustom.css"
-    bool withInjectStyleSheet = false;
+    //If you set "withInjectStyleSheet" to true, in "wwwroot" create a folder named "Stateless" and put a custom css file "swaggercustom.css"
+    bool withInjectStyleSheet = true;
+    string relativePathInjectStyleSheet = "../Stateless/swaggercustom.css";
     string swaggerDocumentationRoute = "Swagger";
-    var swaggerStartupConfigure = new SwaggerStartupConfigure(app, withInjectStyleSheet, swaggerDocumentationRoute);
+
+    var swaggerStartupConfigure = 
+        new SwaggerStartupConfigure(app, withInjectStyleSheet, swaggerDocumentationRoute, relativePathInjectStyleSheet).RedirectToSwagger();;
 }
 ```

@@ -1,40 +1,57 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using System.Threading.Tasks;
 
-namespace VasconcellosSolutions.SwaggerConfigurationExtension
+namespace Swashbuckle.SwaggerConfigurationExtension
 {
     public class SwaggerStartupConfigure
     {
         public string SwaggerDocumentationRoute { get; private set; }
 
-        public string PathInjectStyleSheet { get; private set; }
+        public string RelativePathInjectStyleSheet { get; private set; }
 
         public bool WithInjectStyleSheet { get; private set; }
 
-        public SwaggerStartupConfigure(IApplicationBuilder applicationBuilder, bool withInjectStyleSheet = false, string swaggerDocumentationRoute = "Swagger")
+        private readonly IApplicationBuilder ApplicationBuilder;
+
+        public SwaggerStartupConfigure(IApplicationBuilder applicationBuilder, bool withInjectStyleSheet = false, string swaggerDocumentationRoute = "Swagger", string relativePathInjectStyleSheet = "../Stateless/swaggercustom.css")
         {
-            this.SwaggerDocumentationRoute = swaggerDocumentationRoute;
+            this.ApplicationBuilder = applicationBuilder;
             this.WithInjectStyleSheet = withInjectStyleSheet;
-            if (withInjectStyleSheet) this.PathInjectStyleSheet = "../swagger/swaggercustom.css";
-            this.Configure(applicationBuilder);
+            this.SwaggerDocumentationRoute = swaggerDocumentationRoute;
+
+            if (withInjectStyleSheet) {
+                this.RelativePathInjectStyleSheet = relativePathInjectStyleSheet;
+                this.ApplicationBuilder.UseStaticFiles();
+            }
+
+            this.Configure();
         }
 
-        private void Configure(IApplicationBuilder app)
+        private void Configure()
         {
-            app.UseSwagger();
-            app.UseSwaggerUI(options =>
+            var documentationCreator = new DocumentationCreator();
+
+            this.ApplicationBuilder.UseSwagger();
+            this.ApplicationBuilder.UseSwaggerUI(options =>
             {
                 options.RoutePrefix = this.SwaggerDocumentationRoute;
-                ApiVersioner.SetConfigurationSwaggerUIMenu(options);
+                documentationCreator.SetConfigurationSwaggerUIMenu(options);
                 options.DocExpansion(DocExpansion.List);
-                if (this.WithInjectStyleSheet) options.InjectStylesheet(path: this.PathInjectStyleSheet);
+                if (this.WithInjectStyleSheet) options.InjectStylesheet(path: this.RelativePathInjectStyleSheet);
             });
+        }
 
-            app.Run(context =>
+        /// <summary>
+        /// This method redirects the url index to the url chosen for the Swagger Documentation, when running the application.
+        /// </summary>
+        public SwaggerStartupConfigure RedirectToSwagger()
+        {
+            this.ApplicationBuilder.Run(context =>
             {
                 context.Response.Redirect(location: $"../{this.SwaggerDocumentationRoute}");
                 return Task.CompletedTask;
             });
+            return this;
         }
     }
 }

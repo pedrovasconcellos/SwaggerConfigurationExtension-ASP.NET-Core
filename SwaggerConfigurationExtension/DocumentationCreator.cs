@@ -10,11 +10,11 @@ using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
-namespace VasconcellosSolutions.SwaggerConfigurationExtension
+namespace Swashbuckle.SwaggerConfigurationExtension
 {
-    internal static class ApiVersioner
+    internal class DocumentationCreator
     {
-        internal static IEnumerable<string> GetApiVersions(Assembly webApiAssembly)
+        internal IEnumerable<string> GetApiVersions(Assembly webApiAssembly)
         {
             var apiVersion = webApiAssembly.DefinedTypes
                 .Where(x => x.IsSubclassOf(typeof(Controller)) && x.GetCustomAttributes<ApiVersionAttribute>().Any())
@@ -28,7 +28,7 @@ namespace VasconcellosSolutions.SwaggerConfigurationExtension
             else return apiVersion;
         }
 
-        internal static void SetConfigurationSwaggerDoc(SwaggerGenOptions options)
+        internal void SetConfigurationSwaggerDoc(SwaggerGenOptions options)
         {
             var webApiAssembly = Assembly.GetEntryAssembly();
             var apiVersions = GetApiVersions(webApiAssembly);
@@ -37,13 +37,13 @@ namespace VasconcellosSolutions.SwaggerConfigurationExtension
                 options.SwaggerDoc($"v{apiVersion}", new Info
                 {
                     Version = $"v{apiVersion}",
-                    Title = Config.NameProject,
-                    Description = Config.DescriptionProject + $" v{apiVersion}"
+                    Title = Config.ProjectName,
+                    Description = Config.ProjectDescription + $" v{apiVersion}"
                 });
             }
         }
 
-        internal static void SetConfigurationSwaggerUIMenu(SwaggerUIOptions options)
+        internal void SetConfigurationSwaggerUIMenu(SwaggerUIOptions options)
         {
             var webApiAssembly = Assembly.GetEntryAssembly();
             var apiVersions = GetApiVersions(webApiAssembly);
@@ -53,7 +53,7 @@ namespace VasconcellosSolutions.SwaggerConfigurationExtension
             }
         }
 
-        internal static bool ShowOnlyVersionMethodsInSwagger(string version, ApiDescription apiDescription)
+        internal bool ShowOnlyVersionMethodsInSwagger(string version, ApiDescription apiDescription)
         {
             var attributesControllers = (!(apiDescription.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor))
                 ? Enumerable.Empty<object>()

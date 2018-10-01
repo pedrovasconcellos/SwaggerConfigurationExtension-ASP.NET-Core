@@ -7594,9 +7594,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Vasconcellos\\SwaggerConfigurationExtension-ASP.NET-Core\\SwaggerConfigurationExtension\\SwaggerConfigurationExtension.csproj",
-      "projectName": "SwaggerConfigurationExtension",
-      "projectPath": "C:\\Vasconcellos\\SwaggerConfigurationExtension-ASP.NET-Core\\SwaggerConfigurationExtension\\SwaggerConfigurationExtension.csproj",
+      "projectUniqueName": "C:\\Vasconcellos\\SwaggerConfigurationExtension-ASP.NET-Core\\SwaggerConfigurationExtension\\Swashbuckle.SwaggerConfigurationExtension.csproj",
+      "projectName": "Swashbuckle.SwaggerConfigurationExtension",
+      "projectPath": "C:\\Vasconcellos\\SwaggerConfigurationExtension-ASP.NET-Core\\SwaggerConfigurationExtension\\Swashbuckle.SwaggerConfigurationExtension.csproj",
       "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
       "outputPath": "C:\\Vasconcellos\\SwaggerConfigurationExtension-ASP.NET-Core\\SwaggerConfigurationExtension\\obj\\",
       "projectStyle": "PackageReference",

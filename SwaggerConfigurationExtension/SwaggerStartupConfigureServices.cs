@@ -1,43 +1,61 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Swashbuckle.AspNetCore.Swagger;
+﻿using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace VasconcellosSolutions.SwaggerConfigurationExtension
+namespace Swashbuckle.SwaggerConfigurationExtension
 {
     public class SwaggerStartupConfigureServices
     {
-        public string TypeToken { get; private set; }
+        public string TokenType { get; private set; }
 
         public ApiKeyScheme ApiKeyScheme { get; private set; }
 
-        public SwaggerStartupConfigureServices(IServiceCollection services, string typeToken = "Bearer", ApiKeyScheme apiKeyScheme = null)
+        private readonly IServiceCollection ServiceCollection;
+
+        public SwaggerStartupConfigureServices(IServiceCollection serviceCollection, string tokenType = "Bearer", ApiKeyScheme apiKeyScheme = null)
         {
-            if (this.ApiKeyScheme == null) ApiKeyScheme = new ApiKeyScheme { In = "header", Description = "Please enter JWT with Bearer into field", Name = "Authorization", Type = "apiKey" };
+            this.ServiceCollection = serviceCollection;
+            if (apiKeyScheme == null) this.SetDefaultApiKeyScheme();
             else this.ApiKeyScheme = apiKeyScheme;
-            this.TypeToken = typeToken = "Bearer";
-            this.ConfigureServices(services);
+            this.TokenType = tokenType;
+            this.ConfigureServices();
         }
 
-        private void ConfigureServices(IServiceCollection services)
+        private void ConfigureServices()
         {
-            services.AddSwaggerGen(options =>
+            var documentationCreator = new DocumentationCreator();
+
+            this.ServiceCollection.AddSwaggerGen(options =>
             {
-                ApiVersioner.SetConfigurationSwaggerDoc(options);
+                documentationCreator.SetConfigurationSwaggerDoc(options);
 
                 options.IncludeXmlComments(Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, System.AppDomain.CurrentDomain.FriendlyName + @".xml"));
                 options.DescribeAllEnumsAsStrings();
-                options.AddSecurityDefinition(this.TypeToken, this.ApiKeyScheme);
-                options.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>> { { this.TypeToken, Enumerable.Empty<string>() } });
+                options.AddSecurityDefinition(this.TokenType, this.ApiKeyScheme);
+                options.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>> { { this.TokenType, Enumerable.Empty<string>() } });
 
-                options.DocInclusionPredicate((version, apiDescription) => { return ApiVersioner.ShowOnlyVersionMethodsInSwagger(version, apiDescription); });
+                options.DocInclusionPredicate((version, apiDescription) => { return documentationCreator.ShowOnlyVersionMethodsInSwagger(version, apiDescription); });
             });
         }
 
-        public SwaggerStartupConfigureServices SetNameAndDescriptionProject(string nameProject, string descriptionProject)
+        private void SetDefaultApiKeyScheme()
         {
-            Config.SetSwaggerConfigurations(nameProject, descriptionProject);
+            this.ApiKeyScheme = new ApiKeyScheme {
+                In = "header",
+                Description = "Please enter JWT with Bearer into field",
+                Name = "Authorization",
+                Type = "apiKey"
+            };
+        }
+
+        /// <summary>
+        /// This method inserts the name and description of your project in the Swagger Documentation.
+        /// </summary>
+        public SwaggerStartupConfigureServices SetProjectNameAndDescriptionn(string projectName, string projectDescription)
+        {
+            Config.SetSwaggerConfigurations(projectName, projectDescription);
             return this;
         }
     }

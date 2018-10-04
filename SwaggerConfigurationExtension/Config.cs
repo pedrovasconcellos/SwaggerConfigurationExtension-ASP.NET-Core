@@ -3,7 +3,7 @@ namespace Swashbuckle.SwaggerConfigurationExtension
 {
     internal static class Config
     {
-        public static string ProjectName
+        internal static string ProjectName
         {
             get
             {
@@ -11,7 +11,7 @@ namespace Swashbuckle.SwaggerConfigurationExtension
             }
         }
 
-        public static string ProjectDescription
+        internal static string ProjectDescription
         {
             get
             {

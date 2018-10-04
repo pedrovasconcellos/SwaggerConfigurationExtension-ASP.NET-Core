@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Builder;
@@ -17,7 +17,7 @@ namespace Swashbuckle.SwaggerConfigurationExtension
         internal IEnumerable<string> GetApiVersions(Assembly webApiAssembly)
         {
             var apiVersion = webApiAssembly.DefinedTypes
-                .Where(x => x.IsSubclassOf(typeof(Controller)) && x.GetCustomAttributes<ApiVersionAttribute>().Any())
+                .Where(x => x.IsSubclassOf(typeof(ControllerBase)) && x.GetCustomAttributes<ApiVersionAttribute>().Any())
                 .Select(y => y.GetCustomAttribute<ApiVersionAttribute>())
                 .SelectMany(v => v.Versions)
                 .Distinct()

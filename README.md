@@ -56,7 +56,7 @@ public void ConfigureServices(IServiceCollection services)
     string projectDescription = "This project has the purpose of performing an exemplification";
 
     var swaggerConfigurationExtension = new SwaggerStartupConfigureServices(services, tokenType, apiKeyScheme)
-        .SetNameAndDescriptionProject(projectName, projectDescription);
+        .SetProjectNameAndDescriptionn(projectName, projectDescription);
 }
 ```
 

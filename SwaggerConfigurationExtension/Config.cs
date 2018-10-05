@@ -21,17 +21,18 @@
 
 namespace Swashbuckle.SwaggerConfigurationExtension
 {
-    internal static class Config
+    public static class Config
     {
-        internal static string ProjectName
+        public static string ProjectName
         {
             get
             {
-                if (string.IsNullOrEmpty(_ProjectName)) return "Project name not configured"; else return _ProjectName;
+                if (string.IsNullOrEmpty(_ProjectName)) return "Project name not configured";
+                else return _ProjectName;
             }
         }
 
-        internal static string ProjectDescription
+        public static string ProjectDescription
         {
             get
             {

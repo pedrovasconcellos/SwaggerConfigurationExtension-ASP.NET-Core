@@ -10,6 +10,11 @@
 
 #### Site: https://vasconcellos.solutions/
 
+### Nuget: https://www.nuget.org/packages/Swashbuckle.SwaggerConfigurationExtension
+
+### Nuget Package Manager: Install-Package Swashbuckle.SwaggerConfigurationExtension
+### Nuget .NET CLI: dotnet add package Swashbuckle.SwaggerConfigurationExtension
+
 Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
 ```csharp
 using Microsoft.AspNetCore.Mvc.Versioning;

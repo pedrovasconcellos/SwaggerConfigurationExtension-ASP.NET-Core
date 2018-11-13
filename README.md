@@ -21,6 +21,8 @@ Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
 using Microsoft.AspNetCore.Mvc.Versioning;
 public void ConfigureServices(IServiceCollection services)
 {
+    services.AddMvc();
+
     services.AddApiVersioning(options =>
     {
         options.ApiVersionReader = new QueryStringApiVersionReader();
@@ -42,6 +44,15 @@ Obs: You can use this tag for the Token Generation Controller
 [ApiVersionNeutral]
 [Route("[controller]")]
 ```
+
+Use in EndPoint [Controllers Methods] the verbs HTTP
+```csharp
+[HttpGet]
+[HttpPost]
+[HttpPut]
+[HttpDelete]
+```
+
 Referencing the project
 ```csharp
 using Swashbuckle.SwaggerConfigurationExtension;
@@ -51,6 +62,8 @@ Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
+    app.UseMvc();
+
     string tokenType = "Bearer";
     var apiKeyScheme = new ApiKeyScheme { 
             In = "header", 
@@ -76,6 +89,6 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     string swaggerDocumentationRoute = "Swagger";
 
     var swaggerStartupConfigure = 
-        new SwaggerStartupConfigure(app, withInjectStyleSheet, swaggerDocumentationRoute, relativePathInjectStyleSheet).RedirectToSwagger();;
+        new SwaggerStartupConfigure(app, withInjectStyleSheet, swaggerDocumentationRoute, relativePathInjectStyleSheet).RedirectToSwagger();
 }
 ```

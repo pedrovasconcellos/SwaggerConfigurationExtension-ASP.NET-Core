@@ -58,8 +58,8 @@ namespace Swashbuckle.SwaggerConfigurationExtension
                 options.SwaggerDoc($"v{apiVersion}", new Info
                 {
                     Version = $"v{apiVersion}",
-                    Title = Config.ProjectName,
-                    Description = Config.ProjectDescription + $" v{apiVersion}"
+                    Title = SwaggerConfig.ProjectName,
+                    Description = SwaggerConfig.ProjectDescription + $" v{apiVersion}"
                 });
             }
         }

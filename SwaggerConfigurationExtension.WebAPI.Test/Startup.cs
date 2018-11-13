@@ -61,20 +61,20 @@ namespace SwaggerConfigurationExtension.WebAPI.Test
             });
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            RequireExpirationTime = false,
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = Configuration.IssuerToken,
-            ValidAudience = Configuration.AudienceToken,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.SymmetricSecurityKey))
-        };
-    });
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        RequireExpirationTime = false,
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration.IssuerToken,
+                        ValidAudience = Configuration.AudienceToken,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.SymmetricSecurityKey))
+                    };
+                });
 
             var swaggerConfigurationExtension = new SwaggerStartupConfigureServices(services)
                 .SetProjectNameAndDescriptionn(Configuration.ProjectName, Configuration.ProjectDescription);

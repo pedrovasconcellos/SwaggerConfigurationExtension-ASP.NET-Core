@@ -15,6 +15,8 @@
 ##### Nuget Package Manager: Install-Package Swashbuckle.SwaggerConfigurationExtension
 ##### Nuget .NET CLI: dotnet add package Swashbuckle.SwaggerConfigurationExtension
 
+
+
 Use in Controllers you do want to version
 ```csharp
 [ApiVersion("1.0")]

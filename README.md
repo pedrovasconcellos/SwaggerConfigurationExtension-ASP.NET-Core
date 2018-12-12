@@ -15,23 +15,6 @@
 ##### Nuget Package Manager: Install-Package Swashbuckle.SwaggerConfigurationExtension
 ##### Nuget .NET CLI: dotnet add package Swashbuckle.SwaggerConfigurationExtension
 
-
-Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
-```csharp
-using Microsoft.AspNetCore.Mvc.Versioning;
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddMvc();
-
-    services.AddApiVersioning(options =>
-    {
-        options.ApiVersionReader = new QueryStringApiVersionReader();
-        options.ApiVersionSelector = new CurrentImplementationApiVersionSelector(options);
-        options.ReportApiVersions = true;
-    });
-}
-```
-
 Use in Controllers you do want to version
 ```csharp
 [ApiVersion("1.0")]
@@ -63,14 +46,26 @@ Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
 public void ConfigureServices(IServiceCollection services)
 {
     app.UseMvc();
+    
+    services.AddApiVersioning(options =>
+    {
+        options.ApiVersionReader = new QueryStringApiVersionReader();
+        options.ApiVersionSelector = new CurrentImplementationApiVersionSelector(options);
+        options.ReportApiVersions = true;
+    });
 
-    string tokenType = "Bearer";
-    var apiKeyScheme = new ApiKeyScheme { 
-            In = "header", 
-            Description = "Please enter JWT with Bearer into field", 
-            Name = "Authorization", 
-            Type = "apiKey" 
-        };
+    string tokenType = null;
+    ApiKeyScheme apiKeyScheme = null;
+    
+    //To use the bearer token, uncomment the encoding below.
+    //tokenType = "Bearer";
+    //apiKeyScheme = new ApiKeyScheme { 
+            //In = "header", 
+            //Description = "Please enter JWT with Bearer into field", 
+            //Name = "Authorization", 
+            //Type = "apiKey" 
+        //};
+        
     string projectName = "Vasconcellos WebAPI";
     string projectDescription = "This project has the purpose of performing an exemplification";
 

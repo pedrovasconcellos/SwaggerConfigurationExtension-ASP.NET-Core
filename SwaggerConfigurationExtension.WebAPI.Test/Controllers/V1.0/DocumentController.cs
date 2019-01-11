@@ -57,18 +57,14 @@ namespace SwaggerConfigurationExtension.WebAPI.Test.v1_0
         /// Get Document
         /// </summary> 
         /// <response code="200">Ok</response>
-        /// <response code="400">Bad Request</response>
-        /// <response code="401">Unauthorized</response>
         /// <response code="404">Not Found</response>
         /// <response code="500">Internal Server Error</response>
         [HttpGet]
-        [Route("GetDocumentN1/{id}")]
-        public async Task<ActionResult<string>> GetDocument(string id)
+        [AllowAnonymous]
+        [Route("GetDocumentN1")]
+        public async Task<ActionResult<string>> GetDocument()
         {
-            if (String.IsNullOrEmpty(id))
-                return await Task.FromResult(this.BadRequest());
-
-            string result = (id.ToUpper() == "N1" ? "Document N1" : null);
+            string result = "Document N1";
             if (result == null) return await Task.FromResult(this.NotFound());
             else return await Task.FromResult(this.Ok(result));
         }

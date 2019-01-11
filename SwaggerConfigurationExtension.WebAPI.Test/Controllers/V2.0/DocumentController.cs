@@ -67,7 +67,7 @@ namespace SwaggerConfigurationExtension.WebAPI.Test.v2_0
             if (String.IsNullOrEmpty(id))
                 return await Task.FromResult(this.BadRequest());
 
-            string result = (id.ToUpper() == "N2" ? "Document N2" : null);
+            string result = (id.Equals("N2", StringComparison.OrdinalIgnoreCase) ? "Document N2" : null);
             if (result == null) return await Task.FromResult(this.NotFound());
             else return await Task.FromResult(this.Ok(result));
         }

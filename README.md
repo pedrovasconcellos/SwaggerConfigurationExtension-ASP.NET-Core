@@ -15,7 +15,7 @@
 ##### Nuget Package Manager: Install-Package Swashbuckle.SwaggerConfigurationExtension
 ##### Nuget .NET CLI: dotnet add package Swashbuckle.SwaggerConfigurationExtension
 
-
+##### Documented WebAPI example: https://swaggerconfig.azurewebsites.net
 
 Use in Controllers you do want to version
 ```csharp

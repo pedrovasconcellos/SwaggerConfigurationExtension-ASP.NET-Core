@@ -72,8 +72,8 @@ namespace SwaggerConfigurationExtension.WebAPI.Test
                 return await Task.FromResult(this.BadRequest());
 
             User user = null;
-            if (client.Login.ToLower() == "vasconcellos" && client.Password.ToLower() == "1234")
-                user = new User() { Login = "vasconcellos", Password = "1234"};
+            if (client.Login.Equals("Vasconcellos",StringComparison.OrdinalIgnoreCase) && client.Password.Equals("1234", StringComparison.OrdinalIgnoreCase))
+                user = this.GetUser();
 
             if (user == null) return await Task.FromResult(this.NotFound());
 
@@ -106,5 +106,23 @@ namespace SwaggerConfigurationExtension.WebAPI.Test
                 throw ex;
             }            
         }
+
+        /// <summary>
+        /// Get Token User
+        /// </summary> 
+        /// <response code="200">Ok</response>
+        /// <response code="404">Not Found</response>
+        /// <response code="500">Internal Server Error</response>
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("TokenUser")]
+        public async Task<ActionResult<User>> GetTokenUser()
+        {
+            var result = this.GetUser();
+            if (result == null) return await Task.FromResult(this.NotFound());
+            else return await Task.FromResult(this.Ok(result));
+        }
+
+        private User GetUser() => new User() { ID = 1, Login = "Vasconcellos", Password = "1234"};
     }
 }

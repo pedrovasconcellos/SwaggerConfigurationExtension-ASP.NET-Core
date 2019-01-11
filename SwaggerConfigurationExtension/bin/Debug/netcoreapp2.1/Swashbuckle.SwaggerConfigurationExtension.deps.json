@@ -2007,7 +2007,7 @@
     "Microsoft.AspNetCore.Mvc.Versioning/2.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-imFDMw7KxV4hmhTiB5/39pYMPhoSLXSvwRL4vu/TVvqsoQFA/sEzNp+uB6oR4CYvZdrAvng2UJVcPJnoBx9YYA==",
+      "sha512": "sha512-fWGeQmLVLmKi4yaScHAQz/tSeLKbYifaNo9et2ljZEV535ysFzgJVw+ZGi2B/6aEDQNPn7yRLfJgXAmy7TipQA==",
       "path": "microsoft.aspnetcore.mvc.versioning/2.3.0",
       "hashPath": "microsoft.aspnetcore.mvc.versioning.2.3.0.nupkg.sha512"
     },
@@ -2028,7 +2028,7 @@
     "Microsoft.AspNetCore.Razor.Design/2.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BOK5fckW9v7xWjpEI6bPGwkjw10OPVASZcAa8HoWJo/0Mmg4Azddj92v8noU+YgvD/6zNZ9o/RiRXXKxk5rYwQ==",
+      "sha512": "sha512-f8PKGcxiezL1RVqmnmrazj24Mj4KCTSXqwdotl7Lc+82h8iLV7ItxEIShTJakG7M9iw0ZuCocM0J/IhYesdQrg==",
       "path": "microsoft.aspnetcore.razor.design/2.1.1",
       "hashPath": "microsoft.aspnetcore.razor.design.2.1.1.nupkg.sha512"
     },
@@ -2070,7 +2070,7 @@
     "Microsoft.AspNetCore.StaticFiles/1.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7O5lhBwHj4gxr3ysfmnBEGAiJVQgFw4+4FDwm4vn57NxbYE8k2T9s6lQv7lmOdv4q+2YnOlAIZzLareMwK7+dg==",
+      "sha512": "sha512-2pNvwewAazhaaCdw2CGUvIcDrNQMlqP57JgBDf3v+pRj1rZ29HVnpvkX6a+TrmRYlJNmmxHOKEt468uE/gDcFw==",
       "path": "microsoft.aspnetcore.staticfiles/1.0.4",
       "hashPath": "microsoft.aspnetcore.staticfiles.1.0.4.nupkg.sha512"
     },
@@ -2182,7 +2182,7 @@
     "Microsoft.Extensions.FileProviders.Embedded/1.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HzV1iOfiQ0G0FOlH+u+q//OSvSb9xBgaYFHKheTnSTXBZMuaQ96uSZcPrTzUAjy+0ffa7rDc5F2mWsKD+MCF1A==",
+      "sha512": "sha512-nSEa8bH3fVdTYGqK4twOKLxxgKIW3cz9g9mrzhPh/CmdvGJWKRTIlBIZi7lz+lqNQpxean5vbAo84R/mU+JpGA==",
       "path": "microsoft.extensions.fileproviders.embedded/1.0.1",
       "hashPath": "microsoft.extensions.fileproviders.embedded.1.0.1.nupkg.sha512"
     },
@@ -2392,21 +2392,21 @@
     "Swashbuckle.AspNetCore.Swagger/3.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-byxupaMfEioVpfZLVvI1PzSp5YjIIixwH9NQFJsab1Ye4EgzWoPUJg+QyTY5kZNGDmZ2ir/WfTJyEV4seOCxLw==",
+      "sha512": "sha512-smrewcRU7HK+3WRZWNYFXVAqD1apyIEwcYEdzVu23tNJek8GQM1V8yqIlj41D8CbYoqaeF+fDhkUDY6FSXUDuw==",
       "path": "swashbuckle.aspnetcore.swagger/3.0.0",
       "hashPath": "swashbuckle.aspnetcore.swagger.3.0.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore.SwaggerGen/3.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yzsizeij622YTehkcMFNP1sH/v0CEGZ3NiEkJC4vG6rt7dgCRXZ2rQdN4mn44XlTBv+616ga5fYySuJzka+y9Q==",
+      "sha512": "sha512-DjGV/s6dUi+Xg4ofc2/TCDJlFhGAstvStCBAJ8F2mllIRAtf+s0HsfAIPmFy+W0gOzo1/voRtMKU1uvINZtDFw==",
       "path": "swashbuckle.aspnetcore.swaggergen/3.0.0",
       "hashPath": "swashbuckle.aspnetcore.swaggergen.3.0.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore.SwaggerUI/3.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rmQEdp6njngOGs/0nT2g2olygKiG+SdDVf4Ju7y7Pn6JoiGZ5VukrzaCnPxOvEOkq1vJeV8QCTaNytlTwHaBvQ==",
+      "sha512": "sha512-Gg3rELfq7qJOx8d4xO6hvqSdhMk9ofQCdtLVjBAAVyKehkJRCqiXUO+hJ+/GeEngkaLEglaK/+6an4gC/AxOlg==",
       "path": "swashbuckle.aspnetcore.swaggerui/3.0.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.3.0.0.nupkg.sha512"
     },

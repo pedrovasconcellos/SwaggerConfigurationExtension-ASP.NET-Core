@@ -30,6 +30,14 @@
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
         </member>
+        <member name="M:SwaggerConfigurationExtension.WebAPI.Test.TokenController.GetTokenUser">
+            <summary>
+            Get Token User
+            </summary> 
+            <response code="200">Ok</response>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+        </member>
         <member name="T:SwaggerConfigurationExtension.WebAPI.Test.v1_0.DocumentController">
             <summary>
              DocumentController
@@ -46,13 +54,11 @@
             Document Controller Builder.
             </remarks>
         </member>
-        <member name="M:SwaggerConfigurationExtension.WebAPI.Test.v1_0.DocumentController.GetDocument(System.String)">
+        <member name="M:SwaggerConfigurationExtension.WebAPI.Test.v1_0.DocumentController.GetDocument">
             <summary>
             Get Document
             </summary> 
             <response code="200">Ok</response>
-            <response code="400">Bad Request</response>
-            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
         </member>

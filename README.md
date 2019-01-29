@@ -43,11 +43,14 @@ Referencing the project
 using Swashbuckle.SwaggerConfigurationExtension;
 ```
 
+NOTE: Do not install nuget Swashbuckle.AspNetCore if you are installing SwaggerConfigurationExtension to avoid conflicts.
+NOTE: Set [X] XML Documentation File within csproject (path: select csproject and click properties/build/XML documentation file).
+
 Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-    app.UseMvc();
+    services.AddMvc(options => { });
     
     services.AddApiVersioning(options =>
     {
@@ -80,6 +83,8 @@ Using => Class: Startup Method: Configure(IApplicationBuilder app, IHostingEnvir
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
+    app.UseMvc();
+
     //If you set "withInjectStyleSheet" to true, in "wwwroot" create a folder named "Stateless" and put a custom css file "swaggercustom.css"
     bool withInjectStyleSheet = true;
     string relativePathInjectStyleSheet = "../Stateless/swaggercustom.css";

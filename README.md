@@ -51,7 +51,7 @@ Referencing the project
 using Swashbuckle.SwaggerConfigurationExtension;
 ```
 
-Class: Startup Method: ConfigureServices(IServiceCollection services).
+Class: Startup. Method: ConfigureServices(IServiceCollection services).
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -84,7 +84,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Class: Startup Method: Configure(IApplicationBuilder app, IHostingEnvironment env).
+Class: Startup. Method: Configure(IApplicationBuilder app, IHostingEnvironment env).
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {

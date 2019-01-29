@@ -3,8 +3,6 @@
 ### License: MIT License
 ### Copyright (c) 2019 Pedro Vasconcellos
 
-<img src="https://github.com/pedrovasconcellos/SwaggerConfigurationExtension-ASP.NET-Core/blob/master/Swashbuckle.SwaggerConfigurationExtension.jpg">
-
 #### Author: Pedro Henrique Vasconcellos
 #### Creation Date: 30/09/2018
 
@@ -18,6 +16,8 @@
 ##### Nuget .NET CLI: dotnet add package Swashbuckle.SwaggerConfigurationExtension
 
 ##### Documented WebAPI example: https://swaggerconfig.azurewebsites.net
+
+<img align="center" src="https://github.com/pedrovasconcellos/SwaggerConfigurationExtension-ASP.NET-Core/blob/master/Swashbuckle.SwaggerConfigurationExtension.jpg">
 
 ##### NOTE: Do not install nuget Swashbuckle.AspNetCore if you are installing SwaggerConfigurationExtension to avoid conflicts.
 

@@ -38,13 +38,15 @@ Use in EndPoint [Controllers Methods] the verbs HTTP
 [HttpDelete]
 ```
 
+
+##### NOTE: Do not install nuget Swashbuckle.AspNetCore if you are installing SwaggerConfigurationExtension to avoid conflicts.
+
+##### NOTE: Set [X] XML Documentation File within csproject (path: select csproject and click properties/build/XML documentation file).
+
 Referencing the project
 ```csharp
 using Swashbuckle.SwaggerConfigurationExtension;
 ```
-
-NOTE: Do not install nuget Swashbuckle.AspNetCore if you are installing SwaggerConfigurationExtension to avoid conflicts.
-NOTE: Set [X] XML Documentation File within csproject (path: select csproject and click properties/build/XML documentation file).
 
 Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
 ```csharp

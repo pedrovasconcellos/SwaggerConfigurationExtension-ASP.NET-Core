@@ -10,14 +10,14 @@
 
 #### Site: https://vasconcellos.solutions/
 
-<img src="https://github.com/pedrovasconcellos/SwaggerConfigurationExtension-ASP.NET-Core/blob/master/Swashbuckle.SwaggerConfigurationExtension.jpg">
-
 #### Nuget: https://www.nuget.org/packages/Swashbuckle.SwaggerConfigurationExtension
 
 ##### Nuget Package Manager: Install-Package Swashbuckle.SwaggerConfigurationExtension
 ##### Nuget .NET CLI: dotnet add package Swashbuckle.SwaggerConfigurationExtension
 
 ##### Documented WebAPI example: https://swaggerconfig.azurewebsites.net
+
+<img src="https://github.com/pedrovasconcellos/SwaggerConfigurationExtension-ASP.NET-Core/blob/master/Swashbuckle.SwaggerConfigurationExtension.jpg">
 
 ##### NOTE: Do not install nuget Swashbuckle.AspNetCore if you are installing SwaggerConfigurationExtension to avoid conflicts.
 

@@ -17,26 +17,26 @@
 
 ##### Documented WebAPI example: https://swaggerconfig.azurewebsites.net
 
-<img align="center" src="https://github.com/pedrovasconcellos/SwaggerConfigurationExtension-ASP.NET-Core/blob/master/Swashbuckle.SwaggerConfigurationExtension.jpg">
+<img src="https://github.com/pedrovasconcellos/SwaggerConfigurationExtension-ASP.NET-Core/blob/master/Swashbuckle.SwaggerConfigurationExtension.jpg">
 
 ##### NOTE: Do not install nuget Swashbuckle.AspNetCore if you are installing SwaggerConfigurationExtension to avoid conflicts.
 
 ##### NOTE: Set [X] XML Documentation File within csproject (path: select csproject and click properties/build/XML documentation file).
 
-Use in Controllers you do want to version
+Use in Controllers you do want to version.
 ```csharp
 [ApiVersion("1.0")]
 [Route("v{version:apiVersion}/[controller]")]
 ```
 
-Use in Controllers you do not want to version
-Obs: You can use this tag for the Token Generation Controller
+Use in Controllers you do not want to version.
+Note: You can use this tag for the Token Generation Controller.
 ```csharp
 [ApiVersionNeutral]
 [Route("[controller]")]
 ```
 
-Use in EndPoint [Controllers Methods] the verbs HTTP
+Use in EndPoint [Controllers Methods] the verbs HTTP.
 ```csharp
 [HttpGet]
 [HttpPost]
@@ -49,7 +49,7 @@ Referencing the project
 using Swashbuckle.SwaggerConfigurationExtension;
 ```
 
-Using => Class: Startup Method: ConfigureServices(IServiceCollection services)
+Using => Class: Startup Method: ConfigureServices(IServiceCollection services).
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -82,7 +82,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Using => Class: Startup Method: Configure(IApplicationBuilder app, IHostingEnvironment env)
+Using => Class: Startup Method: Configure(IApplicationBuilder app, IHostingEnvironment env).
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {

@@ -19,9 +19,11 @@
 
 <img src="https://github.com/pedrovasconcellos/SwaggerConfigurationExtension-ASP.NET-Core/blob/master/Swashbuckle.SwaggerConfigurationExtension.jpg">
 
-##### NOTE: Do not install nuget Swashbuckle.AspNetCore if you are installing SwaggerConfigurationExtension to avoid conflicts.
+##### NOTES:
 
-##### NOTE: Set [X] XML Documentation File within csproject (path: select csproject and click properties/build/XML documentation file).
+##### * Do not install nuget Swashbuckle.AspNetCore if you are installing SwaggerConfigurationExtension to avoid conflicts.
+
+##### * Set [X] XML Documentation File within csproject (path: select csproject and click properties/build/XML documentation file).
 
 Use in Controllers you do want to version.
 ```csharp

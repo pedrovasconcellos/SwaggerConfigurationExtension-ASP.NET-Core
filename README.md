@@ -21,9 +21,9 @@
 
 ##### NOTES:
 
-* [Do not install nuget Swashbuckle.AspNetCore if you are installing SwaggerConfigurationExtension to avoid conflicts.]
+* Do not install nuget Swashbuckle.AspNetCore if you are installing SwaggerConfigurationExtension to avoid conflicts.
 
-* [Set [X] XML Documentation File within csproject (path: select csproject and click properties/build/XML documentation file).]
+* Set [X] XML Documentation File within csproject (path: select csproject and click properties/build/XML documentation file).
 
 Use in Controllers you do want to version.
 ```csharp
@@ -51,7 +51,7 @@ Referencing the project
 using Swashbuckle.SwaggerConfigurationExtension;
 ```
 
-Using => Class: Startup Method: ConfigureServices(IServiceCollection services).
+Class: Startup Method: ConfigureServices(IServiceCollection services).
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -84,7 +84,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Using => Class: Startup Method: Configure(IApplicationBuilder app, IHostingEnvironment env).
+Class: Startup Method: Configure(IApplicationBuilder app, IHostingEnvironment env).
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {

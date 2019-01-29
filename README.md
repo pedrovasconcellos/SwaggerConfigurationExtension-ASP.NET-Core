@@ -1,8 +1,6 @@
 # Swashbuckle.SwaggerConfigurationExtension
 
-<img src="https://github.com/pedrovasconcellos/SwaggerConfigurationExtension-ASP.NET-Core/blob/master/Swashbuckle.SwaggerConfigurationExtension.jpg" alt="AutoMapper">
-
-### License: MIT License 
+### License: MIT License
 ### Copyright (c) 2019 Pedro Vasconcellos
 
 #### Author: Pedro Henrique Vasconcellos
@@ -11,6 +9,8 @@
 #### Description: This project was created with the intention of versioning and configure a WebAPI in ASP.NET Core v2.1 using the Swagger (Swashbuckle.AspNetCore)
 
 #### Site: https://vasconcellos.solutions/
+
+<img src="https://github.com/pedrovasconcellos/SwaggerConfigurationExtension-ASP.NET-Core/blob/master/Swashbuckle.SwaggerConfigurationExtension.jpg">
 
 #### Nuget: https://www.nuget.org/packages/Swashbuckle.SwaggerConfigurationExtension
 

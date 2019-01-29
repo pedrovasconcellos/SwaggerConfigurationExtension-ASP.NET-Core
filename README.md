@@ -1,8 +1,7 @@
-<img src="https://github.com/pedrovasconcellos/SwaggerConfigurationExtension-ASP.NET-Core/blob/master/Swashbuckle.SwaggerConfigurationExtension.jpg" alt="AutoMapper"> 
 # Swashbuckle.SwaggerConfigurationExtension
 
-### License: MIT License 
-### Copyright (c) 2019 Pedro Vasconcellos
+<img src="https://github.com/pedrovasconcellos/SwaggerConfigurationExtension-ASP.NET-Core/blob/master/Swashbuckle.SwaggerConfigurationExtension.jpg" alt="AutoMapper">
+
 ### License: MIT License 
 ### Copyright (c) 2019 Pedro Vasconcellos
 

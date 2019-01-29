@@ -17,6 +17,10 @@
 
 ##### Documented WebAPI example: https://swaggerconfig.azurewebsites.net
 
+##### NOTE: Do not install nuget Swashbuckle.AspNetCore if you are installing SwaggerConfigurationExtension to avoid conflicts.
+
+##### NOTE: Set [X] XML Documentation File within csproject (path: select csproject and click properties/build/XML documentation file).
+
 Use in Controllers you do want to version
 ```csharp
 [ApiVersion("1.0")]
@@ -37,11 +41,6 @@ Use in EndPoint [Controllers Methods] the verbs HTTP
 [HttpPut]
 [HttpDelete]
 ```
-
-
-##### NOTE: Do not install nuget Swashbuckle.AspNetCore if you are installing SwaggerConfigurationExtension to avoid conflicts.
-
-##### NOTE: Set [X] XML Documentation File within csproject (path: select csproject and click properties/build/XML documentation file).
 
 Referencing the project
 ```csharp

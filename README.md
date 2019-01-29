@@ -1,7 +1,7 @@
 # Swashbuckle.SwaggerConfigurationExtension
 
 ### License: MIT License 
-### Copyright (c) 2018 Pedro Vasconcellos
+### Copyright (c) 2019 Pedro Vasconcellos
 
 #### Author: Pedro Henrique Vasconcellos
 #### Creation Date: 30/09/2018

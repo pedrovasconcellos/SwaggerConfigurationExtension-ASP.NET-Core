@@ -48,6 +48,8 @@ Use in EndPoint [Controllers Methods] the verbs HTTP.
 
 Referencing the project
 ```csharp
+using Microsoft.AspNetCore.Mvc.Versioning;
+using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.SwaggerConfigurationExtension;
 ```
 

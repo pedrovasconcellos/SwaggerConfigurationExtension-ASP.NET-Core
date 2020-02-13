@@ -55,20 +55,8 @@ using System.Text;
 
 namespace SwaggerConfigurationExtension.WebAPI.Test
 {
-    /// <summary>
-    /// Startup
-    /// </summary>
-    /// <remarks>
-    /// Startup Class.
-    /// </remarks>
     public class Startup
     {
-        /// <summary>
-        /// ConfigureServices
-        /// </summary>
-        /// <remarks>
-        /// This method gets called by the runtime. Use this method to add services to the container.
-        /// </remarks>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
@@ -109,13 +97,7 @@ namespace SwaggerConfigurationExtension.WebAPI.Test
                 //options.Filters.Add(new RequireHttpsAttribute()); //Need an SSL certificate to be uncommented
             });
         }
-
-        /// <summary>
-        /// ConfigureServices
-        /// </summary>
-        /// <remarks>
-        /// This method gets called by the runtime. Use this method to add services to the container.
-        /// </remarks>
+        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

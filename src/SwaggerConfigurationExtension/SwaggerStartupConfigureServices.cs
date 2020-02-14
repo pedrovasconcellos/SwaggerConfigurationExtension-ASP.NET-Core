@@ -9,12 +9,43 @@ namespace Swashbuckle.SwaggerConfigurationExtension
     {
         private readonly IServiceCollection ServiceCollection;
 
-        public bool HasBearerToken { get; private set; }
+        public bool HasAuthentication { get; private set; }
 
-        public SwaggerStartupConfigureServices(IServiceCollection serviceCollection, bool hasBearerToken = false)
+        public OpenApiSecurityScheme SecurityScheme { get; private set; }
+
+        public OpenApiSecurityRequirement SecurityRequirement { get; private set; }
+
+        public string SecurityDefinitionName { get; private set; }
+
+        /// <summary>
+        /// Swagger startup configure services
+        /// Note: If you enable [hasAuthentication = true] the bearer token will be automatically configured within your swagger, without having to pass the optional variables.
+        /// </summary>
+        /// <param name="serviceCollection"></param>
+        /// <param name="hasAuthentication"></param>
+        /// <param name="securityScheme"></param>
+        /// <param name="securityRequirement"></param>
+        /// <param name="securityDefinitionName"></param>
+        public SwaggerStartupConfigureServices(IServiceCollection serviceCollection, bool hasAuthentication = false,
+            OpenApiSecurityScheme securityScheme = null, OpenApiSecurityRequirement securityRequirement = null,
+            string securityDefinitionName = null)
         {
             this.ServiceCollection = serviceCollection;
-            this.HasBearerToken = hasBearerToken;
+            this.HasAuthentication = hasAuthentication;
+
+            if (this.HasAuthentication && securityRequirement == null && securityRequirement == null & string.IsNullOrEmpty(securityDefinitionName))
+            {
+                this.SecurityScheme = this.GetDefaultSecuritySchema();
+                this.SecurityRequirement = this.GetDefaultSecurityRequirement();
+                this.SecurityDefinitionName = "Bearer";
+            }
+            else
+            {
+                this.SecurityScheme = securityScheme;
+                this.SecurityRequirement = securityRequirement;
+            }
+
+
             this.ConfigureServices();
         }
 
@@ -28,35 +59,10 @@ namespace Swashbuckle.SwaggerConfigurationExtension
 
                 options.IncludeXmlComments(Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, System.AppDomain.CurrentDomain.FriendlyName + @".xml"));
 
-                if (this.HasBearerToken)
+                if (this.HasAuthentication)
                 {
-                    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                    {
-                        Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 82yhuh87y2...\"",
-                        Name = "Authorization",
-                        In = ParameterLocation.Header,
-                        Type = SecuritySchemeType.ApiKey,
-                        Scheme = "Bearer"
-                    });
-
-                    options.AddSecurityRequirement(new OpenApiSecurityRequirement()
-                    {
-                        {
-                            new OpenApiSecurityScheme
-                            {
-                                Reference = new OpenApiReference
-                                {
-                                    Type = ReferenceType.SecurityScheme,
-                                    Id = "Bearer"
-                                },
-                                Scheme = "oauth2",
-                                Name = "Bearer",
-                                In = ParameterLocation.Header,
-
-                            },
-                            new List<string>()
-                        }
-                    });
+                    options.AddSecurityDefinition(this.SecurityDefinitionName, this.SecurityScheme);
+                    options.AddSecurityRequirement(this.SecurityRequirement);
                 }
 
                 options.DocInclusionPredicate((version, apiDescription) => { return documentationCreator.ShowOnlyVersionMethodsInSwagger(version, apiDescription); });
@@ -66,10 +72,41 @@ namespace Swashbuckle.SwaggerConfigurationExtension
         /// <summary>
         /// This method inserts the name and description of your project in the Swagger Documentation.
         /// </summary>
+        /// <param name="projectName"></param>
+        /// <param name="projectDescription"></param>
+        /// <returns></returns>
         public SwaggerStartupConfigureServices SetProjectNameAndDescriptionn(string projectName, string projectDescription)
         {
             SwaggerConfig.SetSwaggerConfigurations(projectName, projectDescription);
             return this;
         }
+
+        private OpenApiSecurityScheme GetDefaultSecuritySchema() => new OpenApiSecurityScheme
+        {
+            Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 82yhuh87y2...\"",
+            Name = "Authorization",
+            In = ParameterLocation.Header,
+            Type = SecuritySchemeType.ApiKey,
+            Scheme = "Bearer"
+        };
+
+        private OpenApiSecurityRequirement GetDefaultSecurityRequirement() => new OpenApiSecurityRequirement()
+        {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    },
+                    Scheme = "oauth2",
+                    Name = "Bearer",
+                    In = ParameterLocation.Header,
+
+                },
+                new List<string>()
+            }
+        };
     }
 }

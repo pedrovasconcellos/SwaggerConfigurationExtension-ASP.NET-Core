@@ -57,7 +57,7 @@ namespace SwaggerConfigurationExtension.WebAPI.Test
                 };
             });
 
-            var swaggerConfigurationExtension = new SwaggerStartupConfigureServices(services, true)
+            var swaggerConfigurationExtension = new SwaggerStartupConfigureServices(services, false)
                 .SetProjectNameAndDescriptionn(Configuration.ProjectName, Configuration.ProjectDescription);
 
             services.Configure<MvcOptions>(options =>

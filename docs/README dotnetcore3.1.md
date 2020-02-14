@@ -3,7 +3,7 @@
 ## Description: This project was created with the intention of versioning and configure a WebAPI in ASP.NET Core v3.1 using the Swagger (Swashbuckle.AspNetCore)
 
 ### License: MIT License
-### Copyright (c) 2019 Pedro Vasconcellos
+### Copyright (c) 2020 Pedro Vasconcellos
 ### Sponsor: https://vasconcellos.solutions/
 
 #### Documented WebAPI example: https://swaggerconfig.azurewebsites.net
@@ -89,6 +89,7 @@ namespace SwaggerConfigurationExtension.WebAPI.Test
                 };
             });
 
+            /// Note: If you enable [hasAuthentication = true] the bearer token will be automatically configured within your swagger, without having to pass the optional variables.
             var swaggerConfigurationExtension = new SwaggerStartupConfigureServices(services, true)
                 .SetProjectNameAndDescriptionn(Configuration.ProjectName, Configuration.ProjectDescription);
 

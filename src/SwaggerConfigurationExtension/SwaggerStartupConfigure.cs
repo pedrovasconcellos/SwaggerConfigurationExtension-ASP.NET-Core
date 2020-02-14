@@ -14,6 +14,13 @@ namespace Swashbuckle.SwaggerConfigurationExtension
 
         private readonly IApplicationBuilder ApplicationBuilder;
 
+        /// <summary>
+        /// Swagger start configure
+        /// </summary>
+        /// <param name="applicationBuilder"></param>
+        /// <param name="withInjectStyleSheet"></param>
+        /// <param name="swaggerDocumentationRoute"></param>
+        /// <param name="relativePathInjectStyleSheet"></param>
         public SwaggerStartupConfigure(IApplicationBuilder applicationBuilder, bool withInjectStyleSheet = false, string swaggerDocumentationRoute = "Swagger", string relativePathInjectStyleSheet = "../Stateless/swaggercustom.css")
         {
             this.ApplicationBuilder = applicationBuilder;

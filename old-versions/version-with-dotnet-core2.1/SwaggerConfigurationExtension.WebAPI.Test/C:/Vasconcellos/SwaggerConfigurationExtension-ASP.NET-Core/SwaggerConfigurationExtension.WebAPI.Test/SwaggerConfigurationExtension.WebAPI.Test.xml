@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SwaggerConfigurationExtension.WebAPI.Test</name>
+    </assembly>
+    <members>
+        <member name="T:SwaggerConfigurationExtension.WebAPI.Test.TokenController">
+            <summary>
+            TokenController
+            </summary>
+            <remarks>
+            Controller do Token.
+            </remarks>
+        </member>
+        <member name="M:SwaggerConfigurationExtension.WebAPI.Test.TokenController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            TokenController
+            </summary>
+            <remarks>
+            Construtor da Controller do Token.
+            </remarks>
+        </member>
+        <member name="M:SwaggerConfigurationExtension.WebAPI.Test.TokenController.TokenRequest(SwaggerConfigurationExtension.WebAPI.Test.Entity.User)">
+            <summary>
+            Token Request
+            </summary> 
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:SwaggerConfigurationExtension.WebAPI.Test.TokenController.GetTokenUser">
+            <summary>
+            Get Token User
+            </summary> 
+            <response code="200">Ok</response>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="T:SwaggerConfigurationExtension.WebAPI.Test.v1_0.DocumentController">
+            <summary>
+             DocumentController
+            </summary>
+            <remarks>
+            Document Controller.
+            </remarks>
+        </member>
+        <member name="M:SwaggerConfigurationExtension.WebAPI.Test.v1_0.DocumentController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+             DocumentController
+            </summary>
+            <remarks>
+            Document Controller Builder.
+            </remarks>
+        </member>
+        <member name="M:SwaggerConfigurationExtension.WebAPI.Test.v1_0.DocumentController.GetDocument">
+            <summary>
+            Get Document
+            </summary> 
+            <response code="200">Ok</response>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="T:SwaggerConfigurationExtension.WebAPI.Test.v2_0.DocumentController">
+            <summary>
+             DocumentController
+            </summary>
+            <remarks>
+            Document Controller.
+            </remarks>
+        </member>
+        <member name="M:SwaggerConfigurationExtension.WebAPI.Test.v2_0.DocumentController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+             DocumentController
+            </summary>
+            <remarks>
+            Document Controller Builder.
+            </remarks>
+        </member>
+        <member name="M:SwaggerConfigurationExtension.WebAPI.Test.v2_0.DocumentController.GetDocument(System.String)">
+            <summary>
+            Get Document
+            </summary> 
+            <response code="200">Ok</response>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="T:SwaggerConfigurationExtension.WebAPI.Test.Entity.Token">
+            <summary>
+            Token
+            </summary>
+            <remarks>
+            Entity Token.
+            </remarks>
+        </member>
+        <member name="M:SwaggerConfigurationExtension.WebAPI.Test.Entity.Token.#ctor(System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Token
+            </summary>
+            <remarks>
+            Entity Constructor used in response to Token request.
+            </remarks>
+        </member>
+        <member name="P:SwaggerConfigurationExtension.WebAPI.Test.Entity.Token.BearerToken">
+            <summary>
+            BearerToken
+            <list type="Validations">
+                NotNull()
+                NotEmpty()
+            </list>
+            </summary>
+            <remarks>
+            String of characters that make up a token.
+            </remarks>
+        </member>
+        <member name="P:SwaggerConfigurationExtension.WebAPI.Test.Entity.Token.Type">
+            <summary>
+            Type
+            <list type="Validations">
+                NotNull()
+                NotEmpty()
+            </list>
+            </summary>
+            <remarks>
+            Token type generated.
+            </remarks>
+        </member>
+        <member name="P:SwaggerConfigurationExtension.WebAPI.Test.Entity.Token.Expires">
+            <summary>
+            Expires
+            <list type="Validations">
+                NotNull()
+                NotEmpty()
+            </list>
+            </summary>
+            <remarks>
+            Token expiration date.
+            </remarks>
+        </member>
+        <member name="T:SwaggerConfigurationExtension.WebAPI.Test.Entity.User">
+            <summary>
+            User
+            </summary>
+            <remarks>
+            Entity User.
+            </remarks>
+        </member>
+        <member name="P:SwaggerConfigurationExtension.WebAPI.Test.Entity.User.ID">
+            <summary>
+            ID
+            <list type="Validations">
+                NotNull()
+                NotEmpty()
+            </list>
+            </summary>
+            <remarks>
+            Token entity identifier.
+            </remarks>
+        </member>
+        <member name="P:SwaggerConfigurationExtension.WebAPI.Test.Entity.User.Login">
+            <summary>
+            Login
+            <list type="Validations">
+                NotNull()
+                NotEmpty()
+            </list>
+            </summary>
+            <remarks>
+            WebAPI access user login.
+            </remarks>
+        </member>
+        <member name="P:SwaggerConfigurationExtension.WebAPI.Test.Entity.User.Password">
+            <summary>
+            Password
+            <list type="Validations">
+                NotNull()
+                NotEmpty()
+            </list>
+            </summary>
+            <remarks>
+            WebAPI access user password.
+            </remarks>
+        </member>
+        <member name="T:SwaggerConfigurationExtension.WebAPI.Test.Startup">
+            <summary>
+            Startup
+            </summary>
+            <remarks>
+            Startup Class.
+            </remarks>
+        </member>
+        <member name="M:SwaggerConfigurationExtension.WebAPI.Test.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            ConfigureServices
+            </summary>
+            <remarks>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </remarks>
+        </member>
+        <member name="M:SwaggerConfigurationExtension.WebAPI.Test.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            ConfigureServices
+            </summary>
+            <remarks>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </remarks>
+        </member>
+    </members>
+</doc>

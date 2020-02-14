@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Swashbuckle.SwaggerConfigurationExtension.snk</AssemblyOriginatorKeyFile>
-    <PackageVersion>2.1</PackageVersion>
+    <PackageVersion>2.2</PackageVersion>
     <Authors>Pedro Henrique Vasconcellos</Authors>
     <Copyright>Copyright (c) 2020 Pedro Vasconcellos</Copyright>
     <Owners>Pedro Henrique Vasconcellos</Owners>

@@ -28,21 +28,27 @@ namespace Swashbuckle.SwaggerConfigurationExtension
         /// <param name="securityDefinitionName"></param>
         public SwaggerStartupConfigureServices(IServiceCollection serviceCollection, bool hasAuthentication = false,
             OpenApiSecurityScheme securityScheme = null, OpenApiSecurityRequirement securityRequirement = null,
-            string securityDefinitionName = null)
+            string securityDefinitionName = "Bearer")
         {
             this.ServiceCollection = serviceCollection;
             this.HasAuthentication = hasAuthentication;
 
-            if (this.HasAuthentication && securityRequirement == null && securityRequirement == null & string.IsNullOrEmpty(securityDefinitionName))
+            if (this.HasAuthentication && securityRequirement == null && securityRequirement == null
+                && securityDefinitionName.Equals("Bearer", System.StringComparison.OrdinalIgnoreCase))
             {
                 this.SecurityScheme = this.GetDefaultSecuritySchema();
                 this.SecurityRequirement = this.GetDefaultSecurityRequirement();
-                this.SecurityDefinitionName = "Bearer";
+                this.SecurityDefinitionName = securityDefinitionName;
             }
             else
             {
                 this.SecurityScheme = securityScheme;
                 this.SecurityRequirement = securityRequirement;
+
+                if (this.SecurityScheme == null
+                    || this.SecurityRequirement == null
+                    || !securityDefinitionName.Equals("Bearer", System.StringComparison.OrdinalIgnoreCase))
+                    this.HasAuthentication = false;
             }
 
 
